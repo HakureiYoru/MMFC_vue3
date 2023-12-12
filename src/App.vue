@@ -3,7 +3,7 @@
     <v-app-bar flat :elevation="4">
       <v-container class="mx-auto d-flex align-center justify-center">
         <v-avatar class="me-4" size="32">
-          <img src="/ava.jpg" alt="头像" style="width: 100%; height: 100%;"/>
+          <img src="/ava.jpg" alt="头像" style="width: 100%; height: 100%" />
           <!-- 替换为您的图片路径 -->
         </v-avatar>
 

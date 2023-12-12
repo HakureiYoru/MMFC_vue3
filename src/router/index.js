@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import WelcomePage from '../components/WelcomePage.vue';
+import WelcomePage from '../views/WelcomePage.vue';
 import Introduction from '../components/Introduction.vue';
 
 
