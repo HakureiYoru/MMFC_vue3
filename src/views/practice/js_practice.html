@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Number Increment</title>
+  </head>
+  <body>
+    <h2>Count: <span id="number">0</span></h2>
+    <button onclick="increment()">Click Me</button>
+    <button onclick="clearButton()">Clear</button>
+
+    <script>
+      function increment() {
+        var numberElement = document.getElementById("number");
+        var currentNumber = parseInt(numberElement.innerHTML);
+        numberElement.innerHTML = currentNumber + 1;
+      }
+
+      function clearButton() {
+        document.getElementById("number").innerHTML = 0;
+      }
+    </script>
+  </body>
+</html>

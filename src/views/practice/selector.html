@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Selector Example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* 标签选择器 */
+      * {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .super {
+        color: red;
+        word-spacing: 10px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+
+      /* 类选择器 */
+      .highlight {
+        background-color: yellow;
+      }
+
+      /* ID 选择器 */
+      #special,
+      #important {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .border {
+        border-style: solid;
+        border-width: 4px;
+        border-color: blue;
+        margin: 50px; /*margin是边框到页面边缘，padding是内部字体到边框*/
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--不能直接在body添加style等别的-->
+    <h1>CSS Selectors</h1>
+    <p class="super" id="special">message</p>
+    <a class="highlight">linklink</a>
+
+    <div id="important" class="border">
+      <p>123</p>
+      <p>321</p>
+    </div>
+  </body>
+</html>

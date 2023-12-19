@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Login Page</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-if="!isLoggedIn">请登录</h1>
+      <h1 v-else>欢迎回来: {{ username }}</h1>
+      <!-- 使用Vue的双花括号语法 -->
+      <div v-if="!isLoggedIn">
+        <input type="text" placeholder="用户名" v-model="username" />
+        <input type="password" placeholder="密码" v-model="password" />
+        <button v-on:click="login">登录</button>
+      </div>
+
+      <button v-if="isLoggedIn" @click="logout">登出</button>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            isLoggedIn: false,
+            username: "",
+            password: "",
+          };
+        },
+        methods: {
+          login() {
+            // 这里应该有验证逻辑
+            if (this.username.length > 0 && this.password.length > 0) {
+              this.isLoggedIn = true;
+            } else {
+              alert("Please input username and password!");
+            }
+          },
+          logout() {
+            this.isLoggedIn = false;
+            this.username = "";
+            this.password = "";
+          },
+        },
+      };
+
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

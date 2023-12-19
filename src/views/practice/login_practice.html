@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Login Page</title>
+</head>
+<body>
+    <div id="app">
+        <h1 id="loginMessage">请登录</h1>
+        <h1 id="welcomeMessage" style="display:none;">欢迎回来: <span id="displayUsername"></span></h1>
+        
+        <div id="loginForm">
+            <input type="text" id="username" placeholder="用户名" />
+            <input type="password" id="password" placeholder="密码" />
+            <button id="loginButton">登录</button>
+        </div>
+
+        <button id="logoutButton" style="display:none;">登出</button>
+    </div>
+
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username.length > 0 && password.length > 0) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("loginMessage").style.display = "none";
+                document.getElementById("welcomeMessage").style.display = "";
+                document.getElementById("logoutButton").style.display = "";
+                document.getElementById("displayUsername").innerText = username;
+            } else {
+                alert("Please input username and password!");
+            }
+        });
+
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            document.getElementById("loginForm").style.display = "";
+            document.getElementById("loginMessage").style.display = "";
+            document.getElementById("welcomeMessage").style.display = "none";
+            document.getElementById("logoutButton").style.display = "none";
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Test</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+    <div style="text-align: center" id="Application">
+      <h1>{{ count }}</h1>
+      <button v-on:click="clickButton">Click</button>
+      <button v-on:click="clearButton">Clear</button>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          clickButton() {
+            this.count += 1;
+          },
+
+          clearButton() {
+            this.count = 0;
+          },
+        },
+      };
+//感觉就是简化写法，所有function都放在method，在元件那里直接定义触发方式
+      Vue.createApp(App).mount("#Application");
+    </script>
+  </body>
+</html>
+
